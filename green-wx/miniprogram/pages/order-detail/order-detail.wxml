@@ -1,0 +1,62 @@
+<navigation-bar title="订单详情" back="{{true}}" color="#000000" background="#FFFFFF" iconBackground="#000000"></navigation-bar>
+<view class="order_detail_con">
+  <view class="status">
+    <view class="s_l">
+      <image src="{{statusIcon}}" mode="" />
+    </view>
+    <view class="s_r">
+      <view class="status_info">{{statusMsg}}</view>
+      <!-- <view style="color: #a4a4a4;" wx:if="{{detailInfo.orderStatus ==}}">正在指派工作人员</view> -->
+    </view>
+  </view>
+  <view class="detail">
+    <view style="font-weight:bold; padding-bottom: 20rpx;border-bottom: 1px solid #f2f2f2;">详情</view>
+    <block wx:if="{{key == 1}}">
+      <view class="infos"><text style="color: #acacac; margin-right: 20rpx;width: 150rpx; display: inline-block;">订单编号</text><text>{{detailInfo.orderId}}</text></view>
+      <view class="infos"><text style="color: #acacac; margin-right: 20rpx;width: 150rpx; display: inline-block;">联系人</text><text>{{detailInfo.name}} {{detailInfo.phone}}</text></view>
+      <view class="infos"><text style="color: #acacac; margin-right: 20rpx;width: 150rpx; display: inline-block;">预约时间</text><text>{{detailInfo.appointmentTime}}</text></view>
+      <view class="infos"><text style="color: #acacac; margin-right: 20rpx;width: 150rpx; display: inline-block;">预约地址</text><text>{{detailInfo.address}}</text></view>
+      <view class="infos"><text style="color: #acacac; margin-right: 20rpx;width: 150rpx; display: inline-block;">预约信息</text><text>{{detailInfo.wasteInfo}}</text></view>
+    </block>
+    <block wx:if="{{key == 2}}">
+      <view class="infos"><text style="color: #acacac; margin-right: 20rpx;width: 150rpx; display: inline-block;">订单编号</text><text>{{detailInfo.orderId}}</text></view>
+      <view class="infos"><text style="color: #acacac; margin-right: 20rpx;width: 150rpx; display: inline-block;">收件人</text><text>{{detailInfo.name}} {{detailInfo.phone}}</text></view>
+      <view class="infos"><text style="color: #acacac; margin-right: 20rpx;width: 150rpx; display: inline-block;">收件地址</text><text>{{detailInfo.address}}</text></view>
+      <view class="infos"><text style="color: #acacac; margin-right: 20rpx;width: 150rpx; display: inline-block;">手机号</text><text>{{detailInfo.phone}}</text></view>
+      <view class="infos"><text style="color: #acacac; margin-right: 20rpx;width: 150rpx; display: inline-block;">商品名称</text><text>{{detailInfo.productName}}</text></view>
+      <view class="infos"><text style="color: #acacac; margin-right: 20rpx;width: 150rpx; display: inline-block;">商品数量</text><text>{{detailInfo.quantity}}</text></view>
+    </block>
+
+  </view>
+  <view class="detail_status">
+    <view style="font-weight:bold; padding-bottom: 20rpx;border-bottom: 1px solid #f2f2f2;">订单状态</view>
+    <view class="detail_status_item" wx:if="{{detailInfo.createTime}}">
+      <view class="left">
+        <image src="../../images/orderDetail/提交.png" mode="" />
+      </view>
+      <view class="right">
+        <view>创建时间</view>
+        <view>2025-01-23T12:47:30</view>
+      </view>
+    </view>
+    <view class="detail_status_item" wx:if="{{detailInfo.completeTime}}">
+      <view class="left">
+        <image src="../../images/orderDetail/完成.png" mode="" />
+      </view>
+      <view class="right">
+        <view>完成时间</view>
+        <view>2025-01-23T12:47:30</view>
+      </view>
+    </view>
+    <view class="detail_status_item" wx:if="{{detailInfo.cancelTime}}">
+      <view class="left">
+        <image src="../../images/orderDetail/取消.png" mode="" />
+      </view>
+      <view class="right">
+        <view>取消时间</view>
+        <view>{{detailInfo.cancelTime}}</view>
+        <view>取消原因: {{detailInfo.cancelReason}}</view>
+      </view>
+    </view>
+  </view>
+</view>

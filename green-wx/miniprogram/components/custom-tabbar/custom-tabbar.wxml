@@ -1,0 +1,13 @@
+<view class="custom-tabbar">
+  <view class="tab-item {{currentIndex == 0 ? 'active' : ''}}" 
+      bindtap="onTabClick" 
+      data-index="0">
+  <text>{{title1}}</text>
+</view>
+  <view class="tab-item {{currentIndex == 1 ? 'active' : ''}}" bindtap="onTabClick" data-index="1">
+    <text>{{title2}}</text>
+  </view>
+  <view class="tab-item {{currentIndex == 2 ? 'active' : ''}}" bindtap="onTabClick" data-index="2">
+    <text>{{title3}}</text>
+  </view>
+</view>

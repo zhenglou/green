@@ -1,0 +1,24 @@
+<!--pages/orders/orders.wxml-->
+<navigation-bar title="订单" back="{{false}}" color="#000000" background="#FFFFFF" iconBackground="#000000"></navigation-bar>
+<view style="width: 100rpx; height: 60rpx; text-align: center; line-height: 60rpx;background-color: #adca88;border-radius: 10rpx; position: absolute; z-index: 999999; top: 60rpx;left: 30rpx; font-size: 20rpx; color: white;" class="change_key" bind:tap="changeOrd">切换订单</view>
+<van-tabs sticky animated active="{{ active }}" bind:change="onChange" title-active-color="#abcc83" title-inactive-color="#b3b3b3" color="#adca88">
+  <van-tab title="全部订单">
+    <order-common allItems="{{allInfo}}" bind:customEvent="handleChildEvent" key="{{key}}"></order-common>
+  </van-tab>
+  <van-tab title="进行中">
+    <order-common allItems="{{info1}}" bind:customEvent="handleChildEvent" key="{{key}}"></order-common>
+  </van-tab>
+  <van-tab title="已完成">
+    <order-common allItems="{{info2}}" bind:customEvent="handleChildEvent" key="{{key}}"></order-common>
+  </van-tab>
+  <van-tab title="已取消">
+    <order-common allItems="{{info0}}" bind:customEvent="handleChildEvent" key="{{key}}"></order-common>
+  </van-tab>
+</van-tabs>
+
+
+
+
+<view class="page-container">
+  <custom-tabbar title1="首页" title2="订单" title3="个人中心" bind:tabclick="onTabClicks" currentIndex="1" />
+</view>

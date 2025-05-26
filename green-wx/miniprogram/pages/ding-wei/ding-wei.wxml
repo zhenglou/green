@@ -1,0 +1,14 @@
+<navigation-bar title="定位" back="{{true}}" color="#000000" background="#FFFFFF" iconBackground="black"></navigation-bar>
+<view class="page-body">
+  <view class="page-section page-section-gap">
+    <map
+      id="myMap"
+      style="width: 100%; height: 100vh;"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      show-location
+    ></map>
+  </view>
+</view>
+

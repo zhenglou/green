@@ -1,0 +1,9 @@
+<navigation-bar title="回收价格" back="{{true}}" color="#eee"></navigation-bar>
+<view class="re-price">
+  <view class="left">
+    <view bindtap="handleMenuClick" data-index="{{index}}" class="menu-item {{currentIndex === index ? 'active' : ''}}" wx:for="{{allWasteNameInfo}}" wx:key="index" >{{item.wasteName}}</view>
+  </view>
+  <view class="right">
+    <view class="price-item" wx:for="{{priceInfo}}" wx:key="index">{{item.description}} ({{item.price}})</view>
+  </view>
+</view>

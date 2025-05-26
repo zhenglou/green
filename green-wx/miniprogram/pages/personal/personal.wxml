@@ -1,0 +1,69 @@
+<navigation-bar title="个人中心" back="{{false}}" color="#eee"></navigation-bar>
+<view class="container">
+  <login wx:if="{{loginDisplay}}" bind:loginChange="loginChange" bind:loginChange2="loginChange2"></login>
+  <block wx:if="{{!loginDisplay}}">
+    <view class="user_info">
+      <view class="first_area">
+        <view class="avatar">
+          <image src="../../images/common/QQ.jpg" mode="" />
+        </view>
+        <view class="main_info">
+          <view class="user_name">{{userInfo.userName}}</view>
+          <view class="user_grade">等级 {{userInfo.grade}}</view>
+        </view>
+        <view class="exit">
+          <button bind:tap="quitLogin">退出登录</button>
+        </view>
+        <view class="modify">
+        <button bind:tap="showDisplay">修改信息</button>
+        </view>
+      </view>
+      <view class="second_area">
+        <view class="first_line line">
+          <view class="user_info_item">
+            <view class="tag_value">{{userInfo.experience}}</view>
+            <view class="tag">经验值</view>
+          </view>
+          <view class="user_info_item">
+            <view class="tag_value">{{userInfo.signInStreak}}</view>
+            <view class="tag">连续签到数</view>
+          </view>
+          <view class="user_info_item">
+            <view class="tag_value">{{userInfo.points}}</view>
+            <view class="tag">积分</view>
+          </view>
+        </view>
+        <view class="second_line line">
+          <view class="user_info_item">
+            <view class="tag_value">{{userInfo.recOrdCount}}</view>
+            <view class="tag">订单数</view>
+          </view>
+
+          <view class="user_info_item" style="flex: 1;margin-left: 100rpx;">
+            <view class="tag_value" style="font-size: 40rpx;">{{userInfo.phone}}</view>
+            <view class="tag">手机号</view>
+          </view>
+        </view>
+        <view class="third_line line">
+          <view class="user_info_item">
+            <view class="tag_value">{{userInfo.proOrdCount}}</view>
+            <view class="tag">商品兑换数</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="page-container">
+  <custom-tabbar title1="首页" title2="订单" title3="个人中心" bind:tabclick="onTabClicks" currentIndex="2" />
+</view>
+<van-dialog
+  use-slot
+  title="信息修改"
+  show="{{ show }}"
+  show-cancel-button
+  bind:close="onClose"
+  bind:confirm="modifyUserInfo"
+>
+  <md-user wx:if="{{show}}" id="md" userInfo="{{userInfo}}"></md-user> 
+</van-dialog>

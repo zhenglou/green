@@ -1,0 +1,39 @@
+<view class="bigbingaaa" style="height: 75vh;">
+  <view class="order_item" wx:for="{{allItems}}" wx:key="index">
+    <view class="top_info">
+      <view class="title">{{key == 1?'可回收物回收':'商品兑换'}}</view>
+      <view class="status">{{item.orderStatus == 0?'已取消':item.orderStatus == 1?'进行中':'已完成'}}</view>
+    </view>
+
+    <view class="main_info">
+    <block wx:if="{{key == 1}}">
+      <view class="first_info"><text style="margin-right: 20rpx;width: 150rpx;">{{detailInfo[0]}}</text><text>{{item.orderId}}</text> </view>
+      <view class="first_info"><text style="margin-right: 20rpx;width: 150rpx;">{{detailInfo[1]}}</text><text>{{item.name}} {{item.phone}}</text></view>
+      <view class="first_info"><text style="margin-right: 20rpx;width: 150rpx;">{{detailInfo[2]}}</text><text>{{item.address}}</text> </view>
+      <view class="first_info"><text style="margin-right: 20rpx;width: 150rpx;">{{detailInfo[3]}}</text><text>{{item.appointmentTime}}</text></view>
+    </block>
+    <block wx:if="{{key == 2}}">
+      <view class="first_info"><text style="margin-right: 20rpx;width: 150rpx;">{{detailInfo[0]}}</text><text>{{item.orderId}}</text> </view>
+      <view class="first_info"><text style="margin-right: 20rpx;width: 150rpx;">{{detailInfo[1]}}</text><text>{{item.name}} {{item.phone}}</text></view>
+      <view class="first_info"><text style="margin-right: 20rpx;width: 150rpx;">{{detailInfo[2]}}</text><text>{{item.address}}</text> </view>
+      <view class="first_info"><text style="margin-right: 20rpx;width: 150rpx;">手机号</text><text>{{item.phone}}</text></view>
+    </block>
+
+    </view>
+    <view class="bottom_button">
+      <button bind:tap="gotoDetail" data-item="{{item}}" data-key="{{key}}">查看详情</button>
+      <button wx:if="{{item.orderStatus == 1}}" bind:tap="cancelOrder" data-item="{{item}}" data-index = "{{index}}"style="margin-right: 20rpx;">取消订单</button>
+    </view>
+  </view>
+</view>
+<van-popup show="{{ show }}" bind:close="onClose"  custom-style="height: 20%;" round>
+  <view class="con" style="width: 600rpx; padding: 20rpx;">
+    <view style="text-align: center;font-size: 30rpx; font-weight: bold; padding:20rpx">取消原因</view>
+    <input type="text" style="width: 100%;border: 1px solid #d3d0d0; height: 60rpx;" bindinput="changeReason"/>
+    <view class="deal_button" style="display: flex; flex-direction:row-reverse; padding: 10rpx;" >
+      <view class="confirm_button" style="width: 200rpx;"><button bind:tap="cancelOrder2" style=" background-color: rgb(151, 219, 124);;">确认</button></view>
+      <view class="cancel_button" style="width: 200rpx; margin-right: 20rpx;"><button bind:tap="onClose">取消</button></view>
+    </view>
+  </view>
+
+</van-popup>

@@ -1,0 +1,167 @@
+<navigation-bar back="{{false}}" color="#eee" homeButton="{{false}}" loading="{{false}}" search="{{true}}" address="{{address}}" leftWidth2="width:140rpx">
+  <!-- <view slot="center">首页</view> -->
+</navigation-bar>
+<view class="container">
+  <view class="banner">
+    <image src="../../images/banner/banner.jpg" alt="" />
+  </view>
+  <view class="functionalArea">
+    <view class="firstArea">
+      <fun-diy
+       class="funA" 
+       title="垃圾分类"
+       imageSrc = "../../images/funcArea/垃圾分类@1x.png" 
+       selected = "0" 
+       widthDiy="140rpx" 
+       heightDiy="140rpx" 
+       colorDiy="#FFFFFF"
+       iconWidthDiy="60rpx"
+       iconHeightDiy="60rpx"
+       paddingDiy="8rpx"
+       backgroundDiy="linear-gradient(180deg, #288A84 0%, #CFFFAF 100%, rgba(131, 237, 60, 0) 100%, rgba(150, 232, 96, 0.1644) 100%)"
+       bind:tap="goto"
+       data-param="1"
+       >
+      </fun-diy>
+      <fun-diy 
+       class="funB" 
+       title="环保知识"
+       imageSrc = "../../images/funcArea/文章@1x.png" 
+       selected = "0" 
+       widthDiy="140rpx" 
+       heightDiy="140rpx" 
+       colorDiy="#FFFFFF"
+       iconWidthDiy="60rpx"
+       iconHeightDiy="60rpx"
+       paddingDiy="8rpx"
+       backgroundDiy="linear-gradient( 180deg, #CFFFAF 0%, #288A84 100%)"
+       bind:tap="goto"
+       data-param="2"
+       >
+      </fun-diy>
+      <fun-diy 
+       class="funC" 
+       title="拍照识别"
+       imageSrc = "../../images/funcArea/扫描1x.png" 
+       selected = "2" 
+       widthDiy="316rpx" 
+       heightDiy="140rpx" 
+       iconWidthDiy="60rpx"
+       iconHeightDiy="60rpx"
+       paddingDiy="28rpx"
+       backgroundDiy="#2FD8B3"
+       fontSizeDiy="36rpx"
+       titleMarginDiy="36rpx"
+       bind:tap="goto"
+       data-param="3"
+       >
+      </fun-diy>
+    </view>
+    <view class="SecondArea">
+      <fun-diy
+       class="funA" 
+       title="有害垃圾"
+       imageSrc = "../../images/funcArea/有害垃圾.png" 
+       selected = "0" 
+       widthDiy="316rpx" 
+       heightDiy="204rpx" 
+       colorDiy="#FFFFFF"
+       iconWidthDiy="120rpx"
+       iconHeightDiy="120rpx"
+       paddingDiy="16rpx"
+       backgroundDiy="#FF0F43"
+       bind:tap="goto"
+       data-param="4"
+       >
+      </fun-diy>
+      <fun-diy
+       class="funB" 
+       title="积分商城"
+       imageSrc = "../../images/funcArea/积分1x.png" 
+       selected = "0" 
+       widthDiy="108rpx" 
+       heightDiy="204rpx" 
+       colorDiy="#FFFFFF"
+       iconWidthDiy="60rpx"
+       iconHeightDiy="60rpx"
+       paddingDiy="8rpx"
+       backgroundDiy="linear-gradient( 180deg, #EEBEBE 0%, #8C5757 67%);"
+       fontSizeDiy="28rpx"
+       bind:tap="goto"
+       data-param="5"
+       >
+      </fun-diy>
+      <fun-diy
+       class="funC" 
+       title="排行榜"
+       imageSrc = "../../images/funcArea/排行榜.png" 
+       selected = "0" 
+       widthDiy="108rpx" 
+       heightDiy="204rpx" 
+       colorDiy="#FFFFFF"
+       iconWidthDiy="64rpx"
+       iconHeightDiy="64rpx"
+       paddingDiy="4rpx"
+       backgroundDiy="#EA6868"
+       bind:tap="goto"
+       data-param="6"
+       >
+      </fun-diy>
+    </view>
+    <view class="ThirdArea">
+      <fun-diy 
+       class="funA" 
+       title="预约回收"
+       imageSrc = "../../images/funcArea/可回收.png" 
+       selected = "1" 
+       widthDiy="316rpx" 
+       heightDiy="140rpx" 
+       iconWidthDiy="80rpx"
+       iconHeightDiy="80rpx"
+       paddingDiy="28rpx"
+       backgroundDiy="#006FE5"
+       fontSizeDiy="36rpx"
+       iconMarginDiy="36rpx"
+       bind:tap="goto"
+       data-param="7"
+       >
+      </fun-diy>
+      <fun-diy
+       class="funB" 
+       title="定位"
+       imageSrc = "../../images/funcArea/定位.png" 
+       selected = "0" 
+       widthDiy="140rpx" 
+       heightDiy="140rpx" 
+       colorDiy="#FFFFFF"
+       iconWidthDiy="60rpx"
+       iconHeightDiy="60rpx"
+       paddingDiy="8rpx"
+       backgroundDiy="#6E7331"
+       bind:tap="goto"
+       data-param="8"
+       >
+      </fun-diy>
+      <fun-diy 
+       class="funC" 
+       title="回收价"
+       imageSrc = "../../images/funcArea/回收价.png" 
+       selected = "0" 
+       widthDiy="140rpx" 
+       heightDiy="140rpx" 
+       colorDiy="#FFFFFF"
+       iconWidthDiy="64rpx"
+       iconHeightDiy="64rpx"
+       paddingDiy="8rpx"
+       backgroundDiy="#FCDE9E"
+       bind:tap="goto"
+       data-param="9"
+       >
+      </fun-diy>
+
+    </view>
+  </view>
+</view>
+<view class="page-container">
+  <custom-tabbar title1="首页" title2="订单" title3="个人中心" bind:tabclick="onTabClicks" currentIndex="0" />
+</view>

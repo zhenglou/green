@@ -1,0 +1,226 @@
+page {
+  background-color: #f2f2f2;
+}
+
+.address_detail {
+  height: 160rpx;
+  background-color: white;
+  display: flex;
+  padding: 20rpx;
+  margin-top: 8rpx;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 8rpx;
+  margin-bottom: 12rpx;
+  margin-left: 10rpx;;
+  margin-right: 10rpx;
+
+  .address_icon {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20rpx;
+
+    image {
+      width: 40rpx;
+      height: 40rpx;
+    }
+  }
+
+  .detail_container {
+    .d_top {
+      .d_top_name {
+        font-size: 36rpx;
+        font-weight: bold;
+        margin-right: 10rpx;
+      }
+
+      .d_top_phone {
+        color: #9c9c9c;
+        font-size: 28rpx;
+      }
+    }
+
+    .d_bottom {
+      margin-top: 30rpx;
+      color: #9c9c9c;
+    }
+  }
+
+  .right_icon {
+    position: absolute;
+    right: 20rpx;
+    top: 60rpx;
+  }
+}
+
+.appoint_time {
+  height: 80rpx;
+  background-color: white;
+  border-radius: 8rpx;
+  display: flex;
+  padding: 20rpx;
+  position: relative;
+  margin-left: 10rpx;;
+  margin-right: 10rpx;
+  margin-bottom: 8rpx;
+  .appoint_icon {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20rpx;
+    margin-bottom: 12rpx;
+    image {
+      width: 40rpx;
+      height: 40rpx;
+    }
+  }
+  .appoint_label{
+    height: 100%;
+    line-height: 80rpx;
+    font-size: 30rpx;
+  }
+  .right_icon{
+    position: absolute;
+    right: 20rpx;
+    top: 40rpx;
+  }
+}
+.waste_info{
+  margin-bottom: 12rpx;
+  margin-left: 10rpx;;
+  margin-right: 10rpx;
+  background-color: white;
+  .waste_title{
+    background-color: white;
+    border-radius: 8rpx;
+    margin-bottom: 8rpx;
+    padding:20rpx;
+    display: flex;
+    border-bottom: 2px solid #fbfbfb;
+    image{
+      width: 40rpx;
+      height: 40rpx;
+      margin-right: 20rpx;
+    }
+  }
+  .waste_item{
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+
+    .waste_icon{
+      image{
+        width: 40rpx;
+        height: 40rpx;
+      }
+    }
+  }
+  .waste_add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+      width: 240rpx;
+      height: 80rpx;
+      border: 1px solid #f2f2f2;
+      line-height: 80rpx;
+      text-align: center;
+      margin: 20rpx;
+      background-color: #ffffff;
+      color: #a4bd82;
+    }
+
+  }
+}
+.book_button{
+  background-color: #ffffff;
+  height: 80rpx;
+  border: 1px solid #f2f2f2;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 20rpx;
+  background-color: #ffffff;
+  color: #a4bd82;
+
+}
+
+// 弹窗
+.pop_con {
+  background-color: #f2f2f2;
+  position: relative;
+  min-height: 800rpx;
+
+  .detail_items {
+    padding-top: 40rpx;
+
+    .detail_item {
+      display: flex;
+      padding: 20rpx;
+      background-color: white;
+      border-bottom: 1px solid #f2f2f2;
+
+      .picker {
+        color: #808080;
+      }
+
+      .name {
+        // flex: 1;
+        margin-right: 40rpx;
+      }
+
+      .weui-input {
+        flex: 5;
+      }
+    }
+  }
+
+  .detail-page {
+    display: flex;
+    justify-content: center;
+
+    button {
+      width: 80%;
+      margin-top: 40rpx;
+    }
+  }
+}
+.appoint_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40rpx;
+  min-height: 400rpx;
+  .picker-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .label {
+    font-size: 32rpx;
+    margin-right: 20rpx;
+  }
+  
+  .picker {
+    padding: 10rpx 20rpx;
+    border: 2rpx solid #ccc;
+    border-radius: 8rpx;
+    font-size: 32rpx;
+    background-color: #f5f5f5;
+  }
+
+}
+.appoint_show .detail-page {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  button {
+    width: 80%;
+    margin-bottom: 20rpx;
+    position: absolute;
+    bottom: 20rpx;
+  }
+}

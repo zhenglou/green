@@ -1,0 +1,44 @@
+page{
+  background-color: #ececec;
+}
+.top_bgc{
+  width: 100%;
+  height: 300rpx;
+  // background-color: #0287fb;
+  background-color: #e64a3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -999;
+}
+.grade{
+  margin: 0rpx 20rpx;
+  height: 86vh;
+  background-color: #ffffff;
+  border-radius: 12rpx;
+  margin-top: 40rpx;
+  box-shadow: 0rpx 8rpx 20rpx 0rpx rgba(0, 0, 0, 0.2);
+  .my_grade{
+    // padding: 100rpx;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    font-weight: 700;
+    box-sizing: border-box;
+    padding: 40rpx;
+    font-size: 36rpx;
+  }
+  .all_grade{
+    overflow: scroll;
+    height: 80%;
+    .grade_item{
+      padding: 40rpx;
+      display: flex;
+      justify-content: space-between;
+
+    }
+  }
+
+}

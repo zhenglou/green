@@ -1,0 +1,6 @@
+<!--components/fun-diy/fun-diy.wxml-->
+<view class="{{selected == 0?'funA':selected == 1?'funB':'funC'}}" style="width: {{widthDiy}}; height: {{heightDiy}}; padding: {{paddingDiy}}; background: {{backgroundDiy}};">
+  <image src="{{imageSrc}}" style="width: {{iconWidthDiy}};height: {{iconHeightDiy}};margin-right: {{iconMarginDiy}};" alt="" />
+  <view class="title" style="font-size: {{fontSizeDiy}}; color: {{colorDiy}}; margin-right: {{titleMarginDiy}};">{{title}}</view>
+</view>
+

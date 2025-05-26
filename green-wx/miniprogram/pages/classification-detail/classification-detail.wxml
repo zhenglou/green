@@ -1,0 +1,18 @@
+<!--pages/classification-detail/classification-detail.wxml-->
+<navigation-bar title="{{wasInfo.wasteType}}详情" back="{{false}}" color="#eee"></navigation-bar>
+<view class="was_detail">
+  <view class="top" style="background:{{wasInfo.wasteBgcColor}};">
+    <view class="top_left">
+      <image src="{{wasInfo.wasteImageSrc}}" mode="" />
+    </view>
+    <view class="top_right">
+      <view class="waste_name">{{wasInfo.wasteType}}</view>
+      <view class="waste_description">{{wasInfo.description}}</view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="bottom_title">实物举例</view>
+    <view class="bottom_examples">{{wasInfo.examples}}</view>
+  </view>
+</view>
+<van-button round type="info" class="backo" bind:tap="backo">返回</van-button>

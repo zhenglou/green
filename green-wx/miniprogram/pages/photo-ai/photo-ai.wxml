@@ -1,0 +1,14 @@
+<navigation-bar title="拍照识别" back="{{true}}" color="black" background="#038e61" iconBackground="black"></navigation-bar>
+<view class="container">
+  <camera wx:if="{{!imagePath}}" id="camera" device-position="back" flash="auto" style="width: 100%; height: 300px;"></camera>
+  <button wx:if="{{!imagePath}}" type="primary" bindtap="takePhoto">拍照</button>
+
+  <image wx:if="{{imagePath}}" src="{{imagePath}}" mode="aspectFit" style="width: 100%; height: 300px;"></image>
+  <button wx:if="{{imagePath}}" type="primary" bindtap="imageAi" style="background-color: rgb(136, 219, 80);">识别物品类型</button>
+  <!-- <button type="primary" bindtap="wasteTypeDeepseek" style="background-color: rgb(136, 219, 80);">识别</button> -->
+  <button wx:if="{{imagePath}}" type="primary" bindtap="takePhoto2" style="background-color: rgb(194, 142, 64);">重新拍摄</button>
+  <view wx:if="{{garbageType}}" class="result">
+    <view>识别物品: {{garbageType}}</view>
+    <view>物品类型: {{garbageType2}}</view>
+  </view>
+</view>

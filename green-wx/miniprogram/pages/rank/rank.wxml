@@ -1,0 +1,16 @@
+<navigation-bar title="排行榜" back="{{true}}" color="#eee"></navigation-bar>
+<view class="top_bgc"></view>
+<view class="grade">
+  <view class="my_grade">
+    <view class="my_rank">{{myRankIndex + 1}}</view>
+    <view class="my_name">{{myRankInfo.userName}}</view>
+    <view class="my_score">{{myRankInfo.experience}}</view>
+  </view>
+  <view class="all_grade">
+    <view class="grade_item" wx:for="{{rankInfo}}" wx:key="{{item.userId}}">
+      <view class="rank">{{index+1}}</view>
+      <view class="name">{{item.userName}}</view>
+      <view class="score">{{item.experience}}</view>
+    </view>
+  </view>
+</view>

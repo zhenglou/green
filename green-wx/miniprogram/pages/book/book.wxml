@@ -1,0 +1,134 @@
+<navigation-bar title="可回收物回收" back="{{true}}" color="#000000" iconBackground="#000000" background="#FFFFFF"></navigation-bar>
+<view class="address_detail" bind:tap="addressDisplay">
+  <view class="address_icon">
+    <image src="../../images/book/地址.png" mode="" />
+  </view>
+  <view class="address_label" wx:if="{{!address}}" style="line-height: 122rpx; font-size: 30rpx;">
+    预约上门地址
+  </view>
+  <view class="detail_container">
+    <view class="d_top">
+      <text class="d_top_name">{{name}}</text><text class="d_top_phone">{{phone}}</text>
+    </view>
+    <view class="d_bottom">
+      {{detailAddress}}
+    </view>
+  </view>
+  <view class="right_icon">
+    <image style="width: 40rpx; height: 40rpx;" src="../../images/book/右箭头.png" mode="" />
+  </view>
+</view>
+<view class="appoint_time" bind:tap="appiontDisplay">
+  <view class="appoint_icon">
+    <image src="../../images/book/预约.png" mode="" />
+  </view>
+  <view class="appoint_label" style="margin-right: 8rpx;" wx:if="{{!endTime}}">预约上门时间</view>
+  <view class="appoint_label" wx:if="{{endTime}}">{{date}} {{time}}</view>
+  <view class="right_icon">
+    <image style="width: 40rpx; height: 40rpx;" src="../../images/book/右箭头.png" mode="" />
+  </view>
+</view>
+<view class="waste_info">
+  <view class="waste_title">
+    <image src="../../images/book/信息.png" mode="" />
+    预约种类
+  </view>
+  <view class="waste_item" wx:for="{{selectedCategories2}}">
+    <view class="waste_name">{{item.name}}</view>
+    <view class="waste_kg">{{item.kg}}</view>
+    <view class="waste_icon" bind:tap="removeCategory" data-index="{{index}}">
+      <image src="../../images/book/删除.png" mode="" />
+    </view>
+  </view>
+  <view class="waste_add">
+    <button bindtap="addCategory">添加种类</button>
+  </view>
+  <!-- <view>
+    <picker mode="selector" range="{{categories}}" bindchange="onCategoryChange">
+      <view class="picker">
+        <text>{{selectedCategory}}</text>
+      </view>
+    </picker>
+  </view>
+  <button bindtap="addCategory">添加种类</button>
+  <view>列表</view>
+  <view class="categories-list">
+    <block wx:for="{{selectedCategories}}" wx:key="index">
+      <view>{{item.name}} - {{item.weight}}</view>
+      <button bind:tap="removeCategory">s</button>
+    </block>
+  </view> -->
+</view>
+<view class="book_button" bind:tap="submitOrder">
+  立即预约
+</view>
+<page-container show="{{show}}" round="true">
+  <view class="pop_con" wx:if="{{showList == 0}}">
+    <navigation-bar title="填写地址" back="{{false}}" color="#000000" iconBackground="#000000" background="#FFFFFF"></navigation-bar>
+    <view class="detail_items">
+      <view class="detail_item">
+        <view class="name">联系人</view>
+        <input class="weui-input" bindinput="onNameInput" placeholder="请输入联系人" value="{{name}}" />
+      </view>
+      <view class="detail_item">
+        <view class="name">电话</view>
+        <input class="weui-input" bindinput="onPhoneInput" placeholder="请输入电话" value="{{phone}}" />
+      </view>
+      <view class="detail_item">
+        <view class="name">地址</view>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{region[0]}} {{region[1]}} {{region[2]}}
+          </view>
+        </picker>
+      </view>
+      <view class="detail_item">
+        <view class="name">详细地址</view>
+        <input class="weui-input" bindinput="onAddressInput" placeholder="请输入详细地址" value="{{detailAddress}}" />
+      </view>
+    </view>
+    <view class="detail-page">
+      <button type="primary" bindtap="save">保存</button>
+    </view>
+  </view>
+  <view class="appoint_show" wx:if="{{showList == 1}}">
+    <view class="appoint_container">
+      <!-- 日期选择器 -->
+      <view class="picker-container">
+        <text class="label">日期：</text>
+        <picker mode="date" bindchange="onDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <!-- 时间选择器 -->
+      <view class="picker-container">
+        <text class="label">时间：</text>
+        <picker mode="time" bindchange="onTimeChange">
+          <view class="picker">
+            {{time}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="detail-page">
+      <button type="primary" bind:tap="save2">保存</button>
+    </view>
+  </view>
+</page-container>
+<van-popup  round show="{{ showBook }}" position="bottom" custom-style="height: 50%;" bind:close="onCloseBook" closeable>
+  <van-picker columns="{{ bookColumns }}" bind:change="onBookCounlmsChange" />
+  <view class="qc" style="position: relative; margin-top: 40rpx;">
+    <view style="width: 200rpx; padding:30rpx;background-color: #f0f0f0; border-radius: 8rpx;position: absolute;top: 0;left: 40rpx; display: inline-block; text-align: center;" bind:tap="onCloseBook">取消</view>
+    <view style="width: 200rpx; padding:30rpx;background-color: #07c160; border-radius: 8rpx; position: absolute;top: 0;right: 40rpx; display: inline-block;text-align: center; " bind:tap="confirmWasteInfo">确认</view>
+  </view>
+</van-popup>
+<van-popup  round custom-style="height: 30%;" show="{{success}}" bind:close="onSuccessClose">
+  <view class="succ_con" style="width: 500rpx;height:100%;background-color: #abce7e;">
+    <view style="text-align: center; font-size: 40rpx;color: white; padding: 20rpx; position: relative;">预约成功</view>
+    <button style="display: inline-block; position: absolute; top: 160rpx; left: 40rpx;"bindtap="comback" data-index="1">返回首页</button>
+    <button style="display: inline-block; position: absolute; top: 160rpx; left: 280rpx;" bindtap="comback" data-index="2">查看订单</button>
+  </view>
+</van-popup>
+

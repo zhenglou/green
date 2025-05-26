@@ -1,0 +1,26 @@
+<!--components/mdUserInfo/mdUserInfo.wxml-->
+<view class="containerLogin">
+  <van-field
+    label="用户名"
+    placeholder="请输入用户名"
+    value="{{userName}}"
+    bind:change="onUserNameChange"
+    class="input-field"
+  />
+  <van-field
+    label="密码"
+    type="text"
+    placeholder="请输入密码"
+    value="{{password}}"
+    bind:change="onPasswordChange"
+    class="input-field"
+  />
+  <van-field
+    label="手机号"
+    type="text"
+    placeholder="请输入手机号"
+    value="{{phone}}"
+    bind:change="onPhoneChange"
+    class="input-field"
+  />
+</view>

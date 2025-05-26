@@ -1,0 +1,13 @@
+<!--pages/env-know/env-know.wxml-->
+<navigation-bar title="环保知识" back="{{true}}" color="#eee"></navigation-bar>
+<view class="env_kno">
+  <view class="kno_item" wx:for="{{envInfo}}" wx:key="index" bind:tap="envKnowDetail" data-param="{{item}}">
+    <view class="left">
+      <view class="title">{{item.title}}</view>
+      <view class="introduce">{{item.content}}</view>
+    </view>
+    <view class="right">
+      <image src="{{item.coverImage}}" mode=""/>
+    </view>
+  </view>
+</view>

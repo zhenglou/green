@@ -1,0 +1,14 @@
+<navigation-bar title="垃圾分类" back="{{false}}" color="#eee"></navigation-bar>
+<block>
+  <view class="clafi_container" style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+    <fun-diy class="claA cla" title="可回收物" imageSrc="../../images/funcArea/可回收.png" selected="0" widthDiy="280rpx" heightDiy="280rpx" colorDiy="#FFFFFF" iconWidthDiy="120rpx" iconHeightDiy="120rpx" paddingDiy="16rpx" backgroundDiy="#006FE5" bind:tap="goto" data-param="0">
+    </fun-diy>
+    <fun-diy class="funB cla" title="厨余垃圾" imageSrc="../../images/funcArea/厨余垃圾.png" selected="0" widthDiy="280rpx" heightDiy="280rpx" colorDiy="#FFFFFF" iconWidthDiy="120rpx" iconHeightDiy="120rpx" paddingDiy="16rpx" backgroundDiy="#BF8B62" bind:tap="goto" data-param="1">
+    </fun-diy>
+    <fun-diy class="claC cla" title="有害垃圾" imageSrc="../../images/funcArea/有害垃圾.png" selected="0" widthDiy="280rpx" heightDiy="280rpx" colorDiy="#FFFFFF" iconWidthDiy="120rpx" iconHeightDiy="120rpx" paddingDiy="16rpx" backgroundDiy="#FF0F43" bind:tap="goto" data-param="2">
+    </fun-diy>
+    <fun-diy class="claD cla" title="其他垃圾" imageSrc="../../images/funcArea/其他垃圾.png" selected="0" widthDiy="280rpx" heightDiy="280rpx" colorDiy="#FFFFFF" iconWidthDiy="120rpx" iconHeightDiy="120rpx" paddingDiy="16rpx" backgroundDiy="#8b9692" bind:tap="goto" data-param="3">
+    </fun-diy>
+  </view>
+  <van-button round type="info" class="backo" bind:tap="backo">返回</van-button>
+</block>

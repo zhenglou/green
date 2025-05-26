@@ -1,0 +1,28 @@
+<navigation-bar title="积分兑换" back="{{true}}" color="#eee"></navigation-bar>
+<view class="point_info">
+  <view class="point">{{points}}</view>
+  <view class="msg">我的积分</view>
+</view>
+<view class="product_info">
+  <view class="title">热门商品</view>
+  <view class="product_items">
+    <view class="product_item" wx:for="{{prodInfo}}" wx:key="index" bind:tap="showOrder" data-index="{{index}}">
+      <view class="prodct_image">
+        <image src="{{item.imageUrl}}" mode="" />
+      </view>
+      <view class="product_name">{{item.name}}</view>
+      <view class="product_point">{{item.goodPoint}} 积分</view>
+    </view>
+  </view>
+</view>
+<van-dialog wx:if="{{orderDisplay}}" use-slot title="{{prodInfo[orderCurrent].name}}下单" show="{{ orderDisplay }}"  show-cancel-button bind:confirm="confirmOrder" bind:close="onClose">
+  <view class="containerOrderInfo">
+    <view class="prodInfo">
+      <view class="productName" style="margin-left: 10rpx;">{{}}</view>
+    </view>
+    <van-field label="收件人" placeholder="请输入收件人姓名" value="{{recipient}}" bindinput="onRecipientChange" />
+    <van-field label="电话" placeholder="请输入收件人电话" value="{{phone}}" bindinput="onPhoneChange" />
+    <van-field label="详细地址" placeholder="请输入详细地址" value="{{detailAddress}}" bindinput="onDetailAddressChange" />
+    <van-field label="数量" placeholder="请输入数量" value="{{orderCount}}" bindinput="onProdCountAddressChange" />
+  </view>
+</van-dialog>

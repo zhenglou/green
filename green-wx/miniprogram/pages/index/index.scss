@@ -1,0 +1,56 @@
+page {
+  background-image: linear-gradient(
+    114deg,
+    rgba(7, 187, 132, 1) 17.857143%,
+    rgba(2, 127, 85, 1) 99.999982%,
+    rgba(2, 128, 86, 0.013021) 100%
+  );
+} 
+.container{
+   .banner{
+    height: 300rpx;
+    // background-color: blue;
+    border-radius: 28rpx;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 32rpx;
+    margin-top: 20rpx;
+    overflow: hidden;
+    image{
+      width: 105%;
+      height: 105%;
+      border-radius: 28rpx;
+    }
+   }
+}
+.functionalArea{
+  margin: 0 32rpx;
+  margin-top: 52rpx;
+  .firstArea{
+    display: flex;
+    justify-content: space-between;
+  }
+  .SecondArea{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 76rpx;
+    .funB{
+      .diy--title{
+        width:80rpx !important;
+      }
+    }
+    .funC{
+      .diy--title{
+        width:80rpx !important;
+      }
+    }
+  }
+  .ThirdArea{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 76rpx;
+    .funB{
+      margin-left: 24rpx;
+    }
+  }
+}

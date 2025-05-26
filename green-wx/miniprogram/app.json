@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/orders/orders",
+    "pages/personal/personal",
+    "pages/logs/logs",
+    "pages/classification/classification",
+    "pages/classification-detail/classification-detail",
+    "pages/env-know/env-know",
+    "pages/env-know-detail/env-know-detail",
+    "pages/rePrice/rePrice",
+    "pages/rank/rank",
+    "pages/point-shop/point-shop",
+    "pages/book/book",
+    "pages/order-detail/order-detail",
+    "pages/ding-wei/ding-wei",
+    "pages/photo-ai/photo-ai",
+    "pages/photo-ai2/photo-ai2"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "需要获取您的地理位置，以展示附近垃圾桶"
+    }
+  },
+  "usingComponents": {
+    "custom-tabbar": "./components/custom-tabbar/custom-tabbar",
+    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "fun-diy": "/components/fun-diy/fun-diy",
+    "login": "/components/login/login"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#999999",
+    "selectedColor": "#FFFFFF",
+    "backgroundColor": "#02875c",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/orders/orders",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "window": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "绿鉴",
+    "navigationBarBackgroundColor": "#02855a"
+  },
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "defaultContentBox": true,
+      "tagNameStyleIsolation": "legacy",
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

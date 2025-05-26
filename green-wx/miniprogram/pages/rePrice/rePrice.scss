@@ -1,0 +1,42 @@
+page {
+  background-image: linear-gradient(114deg,
+      rgba(7, 187, 132, 1) 17.857143%,
+      rgba(2, 127, 85, 1) 99.999982%,
+      rgba(2, 128, 86, 0.013021) 100%);
+}
+
+.re-price {
+  display: flex;
+
+  .left {
+    width: 30%;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: #e0d5b4;
+
+    .active {
+      background-color: #f8ebc3;
+      color: rgb(59, 59, 59);
+      font-weight: 600;
+    }
+
+    .menu-item {
+      padding: 20rpx;
+      text-align: center;
+      color: #6e540b;
+    }
+  }
+
+  .right {
+    width: 70%;
+    height: 100vh;
+    background-color: #f8ebc3;
+
+    .price-item {
+      padding: 20rpx 40rpx;
+      // background-color: #f2f2f2;
+      // background-color: #FFFFFF;
+      color: black;
+    }
+  }
+}
