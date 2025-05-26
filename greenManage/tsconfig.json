@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2015", "ES2020"],
+    "composite": true,
+    "skipLibCheck": true,
+    // "esModuleInterop": true,
+    // "isolatedModules": true,
+    "strict": true,
+  },
+  "references": [
+    // todo:保留这配置问题
+    // { "path": "./tsconfig.app.json" }, 
+    { "path": "./tsconfig.node.json" }
+  ],
+  "include": [
+    "./auto-imports.d.ts",
+    "src/**/*.vue",
+    "src/**/*.ts"
+    // "./src/router/index.ts"
+    // "./components.d.ts"
+  ]
+}
+// {
+//   "compilerOptions": {
+//     "moduleResolution": "node",
+//     "esModuleInterop": true,
+//     "skipLibCheck": false,
+//     "strict": true,
+//     "types": [
+//       "vite/client",
+//       // "auto-imports"
+//     ], // 确保包含 auto-imports 类型定义
+//     "baseUrl": ".", // 基本路径
+//     "paths": {
+//       "@/*": ["src/*"]
+//     }
+//   },
+//   "include": [
+//     "src/**/*",
+//     "auto-imports.d.ts" // 确保包括自动导入的类型声明文件
+//   ]
+// }
